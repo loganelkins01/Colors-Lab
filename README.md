@@ -9,17 +9,15 @@ A simple webapp built using a LAMP stack for COP4331. It allows users to create 
 
 # Setup
 1. Obtain access to a remote Linux server capable of supporting a LAMP stack. This project used Digital Ocean.
-2. In a terminal, sign into the remote server
-```
-    ssh root@IPAddressOrDomain
-```
+2. In a terminal, sign into the remote server: ssh root@IPAddressOrDomain
+
 3. Clone the repository into the server
-```
+    ```
     cd var/www/html
     git clone https://github.com/loganelkins01/Colors-Lab.git
-```
+    ```
 4. Setup the MySQL database through the command line
-```
+    ```
     create database COP4331;
     use COP4331;
     CREATE TABLE `COP4331`.`Users`
@@ -50,18 +48,18 @@ A simple webapp built using a LAMP stack for COP4331. It allows users to create 
         `UserID` INT NOT NULL DEFAULT '0' ,
         PRIMARY KEY (`ID`)
     ) ENGINE = InnoDB;
-```
+    ```
 5. Create an administrative user for the database with a unique username and password
-```
+    ```
     create user 'username' identified by 'password';
-```
+    ```
 6. Update PHP files with the administrator's username and password
-```
+    ```
     $conn = new mysqli("localhost", "username", "password", "COP4331");
-```
+    ```
 
 # Run
-Visit the website at http://serverip
+Visit the website at http://yourserverip
 
 # Assumptions, Limitations, and AI usage
 - The Linux server must have git installed and support MySQL, PHP, and Apache.
