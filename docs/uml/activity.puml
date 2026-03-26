@@ -1,0 +1,40 @@
+@startuml
+
+start
+
+:Navigate to login page;
+
+:Enter Login Info;
+
+if (Account exists?) then (Yes)
+    :Validate credentials;
+endif
+
+if (Login successful?) then (Yes)
+
+    :User Dashboard;
+
+    while (User logged in?)
+        :Choose Action;
+
+        if (Logout?) then (Yes)
+            break
+        elseif (Search Colors?) then (Yes)
+            :Enter search query;
+            :Display results;
+        elseif (Add Color?) then (Yes)
+            :Enter color;
+            :Add to user's color list;
+        endif
+
+    endwhile
+
+    :Logout;
+    stop
+
+else (No)
+    :Display error message;
+    stop
+endif
+
+@enduml
