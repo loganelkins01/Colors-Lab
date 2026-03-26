@@ -1,0 +1,42 @@
+@startuml
+
+' Classes
+class User {
+    - id : int
+    - firstname : string
+    - lastname : string
+    - username : string
+    - password : string
+    + login()
+    + logout()
+}
+
+class Color {
+    - id : int
+    - name : string
+    - userid : int
+    + addColor()
+    + searchColor()
+}
+
+class AddColorAPI {
+    + addColor(userid : string, color : string)
+}
+
+class SearchColorsAPI {
+    + searchColors(name : string, userid : string)
+}
+
+class LoginAPI {
+    + login(username, password)
+}
+
+' Relationships
+User "1" --> "0..*" Color : owns
+
+LoginAPI --> User : uses
+AddColorAPI --> Color : uses
+SearchColorsAPI --> Color : uses
+
+
+@enduml
