@@ -63,4 +63,4 @@ Visit the website at http://yourserverip
 
 # Assumptions, Limitations, and AI usage
 - The Linux server must have git installed and support MySQL, PHP, and Apache.
-- No AI was used in the implementation of this lab or repository
+- AI was used to help create the use case diagrams in accordance with class policy.

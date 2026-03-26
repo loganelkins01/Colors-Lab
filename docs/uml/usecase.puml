@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+' Actor
+actor User
+
+' System boundary
+rectangle "Colors Lab" {
+
+    ' Authentication
+    User --> (Login)
+
+    ' Authenticated actions
+    User --> (Search Colors)
+    User --> (Add Color)
+    User --> (Logout)
+
+    ' Relationships (must be logged in first)
+    (Search Colors) .> (Login) : <<include>>
+    (Add Color) .> (Login) : <<include>>
+    (Logout) .> (Login) : <<include>>
+
+}
+@enduml
