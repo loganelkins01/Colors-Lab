@@ -1,5 +1,3 @@
-# Enforces automated linting on files changed in push and pull requests using
-# the Github Super Linter
 name: Super Linter
 
 on:
@@ -25,12 +23,13 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v6
         env:
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
           USE_FIND_ALGORITHM: true
           FAIL_ON_WARNING: false
 
+          # Enable languages
           VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_CSS: true
           VALIDATE_HTML: true
