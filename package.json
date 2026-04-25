@@ -1,0 +1,27 @@
+{
+  "name": "colors-lab",
+  "version": "1.0.0",
+  "description": "A simple webapp built using a LAMP stack for COP4331. It allows users to create an account, login, and search for and add colors to their personal list of colors.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loganelkins01/Colors-Lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loganelkins01/Colors-Lab/issues"
+  },
+  "homepage": "https://github.com/loganelkins01/Colors-Lab#readme",
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
+  }
+}

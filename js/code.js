@@ -108,13 +108,17 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
+function buildAddColorPayload(newColor, userId)
+{
+	return JSON.stringify({color: newColor, userId: userId});
+}
+
 function addColor()
 {
 	let newColor = document.getElementById("colorText").value;
 	document.getElementById("colorAddResult").innerHTML = "";
 
-	let tmp = {color:newColor,userId,userId};
-	let jsonPayload = JSON.stringify( tmp );
+	let jsonPayload = buildAddColorPayload(newColor, userId);
 
 	let url = urlBase + '/AddColor.' + extension;
 	
@@ -183,3 +187,8 @@ function searchColor()
 	}
 	
 }
+
+module.exports = {
+	doLogin,
+	buildAddColorPayload
+};
